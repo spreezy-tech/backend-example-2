@@ -2,11 +2,14 @@ package com.restaurant.restaurant_app.controller;
 
 
 import com.restaurant.restaurant_app.model.RestaurantRequest;
+import com.restaurant.restaurant_app.model.RestaurantResponse;
 import com.restaurant.restaurant_app.service.RestaurantService;
 import com.restaurant.restaurant_app.service.RestaurantServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/restro")
@@ -22,6 +25,16 @@ public class RestaurantController {
     @GetMapping("/new")
     public ResponseEntity<String> helloWorld() {
         return new ResponseEntity<>("Hello from API", HttpStatus.ACCEPTED);
+    }
+
+    @GetMapping("/new/{name}/{type}")
+    public ResponseEntity<String> helloWorld2(@PathVariable String name, @PathVariable String type){
+        return new ResponseEntity<>("Hello from API | Name : " + name + " | Type : " + type, HttpStatus.OK);
+    }
+
+    @GetMapping("/getAllRestaurants")
+    public ResponseEntity<List<RestaurantResponse>> getAllRestaurants(){
+        return new ResponseEntity<>(restaurantService.getRestuarants(), HttpStatus.OK);
     }
 
     @PostMapping("/create")
