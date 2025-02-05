@@ -15,6 +15,8 @@ import lombok.NoArgsConstructor;
 public class RestaurantAddressDetails {
 
     @Id
+    @SequenceGenerator(name = "seq_restaurant_address_details", sequenceName = "seq_restaurant_address_details", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_restaurant_address_details")
     @Column(name = "restro_address_id")
     private Integer restroAddressId;
 

@@ -40,7 +40,6 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     private RestaurantDetails mapDTOToEntity(RestaurantRequest restaurantRequest) {
         return RestaurantDetails.builder()
-                .restroId(1)
                 .restroName(restaurantRequest.getRestroName())
                 .restroType(restaurantRequest.getRestroType())
                 .build();

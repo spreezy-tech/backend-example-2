@@ -1,9 +1,6 @@
 package com.restaurant.restaurant_app.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,6 +15,8 @@ import lombok.NoArgsConstructor;
 public class RestaurantDetails {
 
     @Id
+    @SequenceGenerator(name = "seq_restaurant_details", sequenceName = "seq_restaurant_details", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_restaurant_details")
     @Column(name = "restro_id")
     private Integer restroId;
 
