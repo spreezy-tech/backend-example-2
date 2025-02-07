@@ -4,14 +4,20 @@ import com.restaurant.restaurant_app.entity.RestaurantDetails;
 import com.restaurant.restaurant_app.model.RestaurantRequest;
 import com.restaurant.restaurant_app.model.RestaurantResponse;
 import com.restaurant.restaurant_app.repository.RestaurantDetailsRepository;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Service
 public class RestaurantServiceImpl implements RestaurantService {
+
+    @Value("${test.property.dummy}")
+    private String dummyProperty = "";
 
     private final RestaurantDetailsRepository restaurantDetailsRepository;
 
@@ -35,6 +41,8 @@ public class RestaurantServiceImpl implements RestaurantService {
     public List<RestaurantResponse> getRestuarants() {
         List<RestaurantDetails> restaurantDetails = restaurantDetailsRepository.findAll();
         List<RestaurantResponse> listOfRestaurants = mapEntityToDTO(restaurantDetails);
+        log.info("Value captured from properties file : {}", dummyProperty);
+
         return listOfRestaurants;
     }
 

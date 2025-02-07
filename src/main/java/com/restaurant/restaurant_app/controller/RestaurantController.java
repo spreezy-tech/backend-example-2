@@ -5,19 +5,21 @@ import com.restaurant.restaurant_app.model.RestaurantRequest;
 import com.restaurant.restaurant_app.model.RestaurantResponse;
 import com.restaurant.restaurant_app.service.RestaurantService;
 import com.restaurant.restaurant_app.service.RestaurantServiceImpl;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/restro")
 public class RestaurantController {
 
     private final RestaurantService restaurantService;
 
-    public RestaurantController(RestaurantServiceImpl restaurantService) {
+    public RestaurantController(@Qualifier("restaurantServiceImpl") RestaurantService restaurantService) {
         this.restaurantService = restaurantService;
     }
 
