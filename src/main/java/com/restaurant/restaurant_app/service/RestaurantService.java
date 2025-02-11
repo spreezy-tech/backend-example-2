@@ -10,4 +10,6 @@ public interface RestaurantService {
     public boolean addRestaurant(RestaurantRequest request);
 
     public List<RestaurantResponse> getRestuarants();
+
+    public List<RestaurantResponse> getRestuarantsByRestroType(String restroType);
 }

@@ -39,6 +39,12 @@ public class RestaurantController {
         return new ResponseEntity<>(restaurantService.getRestuarants(), HttpStatus.OK);
     }
 
+
+    @GetMapping("/getRestaurants/{restroType}")
+    public ResponseEntity<List<RestaurantResponse>> getRestaurantsByType(@PathVariable String restroType){
+        return new ResponseEntity<>(restaurantService.getRestuarantsByRestroType(restroType), HttpStatus.OK);
+    }
+
     @PostMapping("/create")
     public ResponseEntity<String> registerRestaurant(@RequestBody RestaurantRequest restaurantRequest) {
 //        System.out.println(restaurantRequest);

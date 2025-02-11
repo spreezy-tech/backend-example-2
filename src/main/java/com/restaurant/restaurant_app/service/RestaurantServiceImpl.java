@@ -43,6 +43,16 @@ public class RestaurantServiceImpl implements RestaurantService {
         List<RestaurantResponse> listOfRestaurants = mapEntityToDTO(restaurantDetails);
         log.info("Value captured from properties file : {}", dummyProperty);
 
+
+
+        return listOfRestaurants;
+    }
+
+    @Override
+    public List<RestaurantResponse> getRestuarantsByRestroType(String restroType) {
+        List<RestaurantDetails> restaurantDetails = restaurantDetailsRepository.getRestaurantByRestroType(restroType);
+        List<RestaurantResponse> listOfRestaurants = mapEntityToDTO(restaurantDetails);
+
         return listOfRestaurants;
     }
 

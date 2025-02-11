@@ -1,9 +1,4 @@
-server:
-  port: 8081
-
 spring:
-  application:
-    name: DEV application
   datasource:
     url: jdbc:postgresql://localhost:5432/spreezy
     username: spreezy
@@ -14,9 +9,4 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
-
-
-test:
-  property:
-    dummy: ABC
+      ddl-auto: update
