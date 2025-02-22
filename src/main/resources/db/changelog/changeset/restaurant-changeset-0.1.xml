@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="dummy-table-1" author="Sarthak Gophane">
+        <createTable tableName="dummy-table">
+            <column name="dummy-table-id" type="int"></column>
+            <column name="name" type="varchar2(50)"></column>
+            <column name="contact" type="varchar2(20)"></column>
+        </createTable>
+    </changeSet>
+    <changeSet id="new-column-1" author="Sarthak Gophane">
+        <addColumn tableName="dummy-table">
+            <column name="email" type="varchar2(50)"></column>
+        </addColumn>
+    </changeSet>
+    <changeSet id="tag-database-0.1" author="Sarthak Gophane">
+        <tagDatabase tag="0.1"></tagDatabase>
+    </changeSet>
+</databaseChangeLog>

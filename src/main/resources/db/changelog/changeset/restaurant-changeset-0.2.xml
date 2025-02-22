@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="remove-column" author="Sarthak Gophane">
+        <dropColumn tableName="dummy-table">
+            <column name="email"></column>
+        </dropColumn>
+    </changeSet>
+    <changeSet id="tag-database-0.2" author="Sarthak Gophane">
+        <tagDatabase tag="0.2"></tagDatabase>
+    </changeSet>
+</databaseChangeLog>

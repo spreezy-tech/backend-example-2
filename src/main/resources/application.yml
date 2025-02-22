@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/spreezy
-    username: spreezy
-    password: spreezy@123
+    username: dummy_owner
+    password: dummy@123
     driverClassName: org.postgresql.Driver
 
   jpa:
@@ -10,3 +10,9 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+
+  liquibase:
+    change-log: classpath:db/changelog/restaurant-master-changelog.xml
+    enabled: true
+    drop-first: false
+    default-schema: dummy
