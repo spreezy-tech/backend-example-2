@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create-table-restaurant-contact" author="Harshada Navale">
+        <createSequence sequenceName="seq_restaurant_contact" startValue="1" incrementBy="1"/>
+        <createTable tableName="restaurant_contact">
+            <column name="contact_id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="pk_restaurant_contact" nullable="false"/>
+            </column>
+
+            <column name="address_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="mobile" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+<!--    <changeSet id="dummy-table-2" author="Sarthak">-->
+<!--        <createTable tableName="random-table">-->
+<!--            <column name="random-column" type="int"></column>-->
+<!--        </createTable>-->
+<!--    </changeSet>-->
+</databaseChangeLog>

@@ -7,5 +7,6 @@
 
     <include file="db/changelog/changeset/restaurant-changeset-0.1.xml" />
     <include file="db/changelog/changeset/restaurant-changeset-0.2.xml" />
+    <include file="db/changelog/changeset/restaurant-changeset-0.3.xml" />
 
 </databaseChangeLog>

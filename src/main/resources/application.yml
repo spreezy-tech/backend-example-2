@@ -1,7 +1,7 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/spreezy
-    username: dummy_owner
+    username: dummy_user
     password: dummy@123
     driverClassName: org.postgresql.Driver
 
@@ -13,6 +13,6 @@ spring:
 
   liquibase:
     change-log: classpath:db/changelog/restaurant-master-changelog.xml
-    enabled: true
+    enabled: false
     drop-first: false
     default-schema: dummy
