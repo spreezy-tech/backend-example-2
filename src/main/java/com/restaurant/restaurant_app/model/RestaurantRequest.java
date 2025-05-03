@@ -1,8 +1,12 @@
 package com.restaurant.restaurant_app.model;
 
-import lombok.Data;
+import lombok.*;
 
+@Getter
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class RestaurantRequest {
 
     private String restroName;
